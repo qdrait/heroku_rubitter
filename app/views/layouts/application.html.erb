@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rubitter</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    
+    <div class ="container">
+  
+    <header class = "header">Rubitter</header>
+    
+    <nav>
+      <ul class="row">
+        <li class="col-sm-3 col-xs-6"><a href=<%=tweets_path %>>TOP</a></li>
+        <li class="col-sm-3 col-xs-6"><a href=<%=new_tweet_path %>>新規投稿</a></li>
+        <li class="col-sm-3 col-xs-6"><a href=#>DUMMY</a></li>
+        <li class="col-sm-3 col-xs-6"><a href=#>DUMMY</a></li>
+      </ul>
+    </nav>
+
+    <% flash.each do |name, msg| %>
+      <div class="alert alert-<%= name %>">
+        <a class="close" data-dismiss="alert">×</a>
+        <%= msg %>
+      </div>
+    <% end %>
+      
+      <%= yield %>
+
+    <footer>
+      Copyright hogehoge - hogehoge@fugafuga.com
+    </footer>
+    </div>
+  </body>
+  
+  
+</html>
